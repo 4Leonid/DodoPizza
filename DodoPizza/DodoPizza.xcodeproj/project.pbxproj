@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,8 +13,9 @@
 		BF2ACC492CAC3005005EAD24 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = BF2ACC482CAC3005005EAD24 /* Base */; };
 		BF2ACC4B2CAC3006005EAD24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF2ACC4A2CAC3006005EAD24 /* Assets.xcassets */; };
 		BF2ACC4E2CAC3006005EAD24 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = BF2ACC4D2CAC3006005EAD24 /* Base */; };
-		BF2ACC562CAC3428005EAD24 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2ACC552CAC3428005EAD24 /* CustomCell.swift */; };
+		BF2ACC562CAC3428005EAD24 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2ACC552CAC3428005EAD24 /* ProductCell.swift */; };
 		BF2ACC582CAC35C7005EAD24 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2ACC572CAC35C7005EAD24 /* UIView+Extensions.swift */; };
+		BF9979B02CB1AA3000BE797D /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9979AF2CB1AA3000BE797D /* Product.swift */; };
 		BFC928522CADE246004FE8EC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC928512CADE246004FE8EC /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,10 +28,17 @@
 		BF2ACC4A2CAC3006005EAD24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF2ACC4D2CAC3006005EAD24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF2ACC4F2CAC3006005EAD24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BF2ACC552CAC3428005EAD24 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		BF2ACC552CAC3428005EAD24 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		BF2ACC572CAC35C7005EAD24 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		BF9979AF2CB1AA3000BE797D /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		BFC928512CADE246004FE8EC /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		BF9979B92CB1B72B00BE797D /* Fonts */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Fonts; sourceTree = "<group>"; };
+		BF9979CE2CB1B9B600BE797D /* Helpers */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Helpers; sourceTree = "<group>"; };
+		BF9979D92CB1C52200BE797D /* Custom */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Custom; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		BF2ACC3B2CAC3005005EAD24 /* Frameworks */ = {
@@ -62,11 +70,15 @@
 		BF2ACC402CAC3005005EAD24 /* DodoPizza */ = {
 			isa = PBXGroup;
 			children = (
+				BF9979D92CB1C52200BE797D /* Custom */,
+				BF9979CE2CB1B9B600BE797D /* Helpers */,
+				BF9979B92CB1B72B00BE797D /* Fonts */,
 				BF2ACC412CAC3005005EAD24 /* AppDelegate.swift */,
 				BF2ACC432CAC3005005EAD24 /* SceneDelegate.swift */,
 				BF2ACC452CAC3005005EAD24 /* MenuViewController.swift */,
+				BF9979AF2CB1AA3000BE797D /* Product.swift */,
 				BFC928512CADE246004FE8EC /* DetailViewController.swift */,
-				BF2ACC552CAC3428005EAD24 /* CustomCell.swift */,
+				BF2ACC552CAC3428005EAD24 /* ProductCell.swift */,
 				BF2ACC572CAC35C7005EAD24 /* UIView+Extensions.swift */,
 				BF2ACC472CAC3005005EAD24 /* Main.storyboard */,
 				BF2ACC4A2CAC3006005EAD24 /* Assets.xcassets */,
@@ -90,6 +102,11 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				BF9979B92CB1B72B00BE797D /* Fonts */,
+				BF9979CE2CB1B9B600BE797D /* Helpers */,
+				BF9979D92CB1C52200BE797D /* Custom */,
 			);
 			name = DodoPizza;
 			productName = DodoPizza;
@@ -151,8 +168,9 @@
 				BF2ACC422CAC3005005EAD24 /* AppDelegate.swift in Sources */,
 				BF2ACC582CAC35C7005EAD24 /* UIView+Extensions.swift in Sources */,
 				BFC928522CADE246004FE8EC /* DetailViewController.swift in Sources */,
-				BF2ACC562CAC3428005EAD24 /* CustomCell.swift in Sources */,
+				BF2ACC562CAC3428005EAD24 /* ProductCell.swift in Sources */,
 				BF2ACC442CAC3005005EAD24 /* SceneDelegate.swift in Sources */,
+				BF9979B02CB1AA3000BE797D /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

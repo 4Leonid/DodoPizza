@@ -7,11 +7,11 @@
 
 import UIKit
 
-final class CustomCell: UITableViewCell {
+final class ProductCell: UITableViewCell {
   
-  static var reuseIdentifier = String(describing: CustomCell.self)
+  static var reuseIdentifier = String(describing: ProductCell.self)
   
-  static let rowHeight: CGFloat = 100
+  static let rowHeight: CGFloat = 150
   
   private lazy var containerView: UIView = {
     let element = UIView()
@@ -22,6 +22,9 @@ final class CustomCell: UITableViewCell {
   private lazy var proguctImageView: UIImageView = {
     let element = UIImageView()
     element.image = UIImage(systemName: "circle.hexagonpath.fill")
+    element.layer.cornerRadius = 40
+    element.backgroundColor = .black
+    element.clipsToBounds = true
     element.translatesAutoresizingMaskIntoConstraints = false
     return element
   }()
@@ -29,6 +32,7 @@ final class CustomCell: UITableViewCell {
   private lazy var nameLabel: UILabel = {
     let element = UILabel()
     element.text = "Pizza name"
+    element.font = .segoeBold(ofSize: 20)
     element.textColor = .white
     element.translatesAutoresizingMaskIntoConstraints = false
     return element
@@ -38,6 +42,7 @@ final class CustomCell: UITableViewCell {
     let element = UILabel()
     element.textColor = .systemGray
     element.text = "Detail"
+    element.numberOfLines = 3
     element.translatesAutoresizingMaskIntoConstraints = false
     return element
   }()
@@ -72,11 +77,16 @@ final class CustomCell: UITableViewCell {
     fatalError("init(coder:) has not been implemented")
   }
   
-  
+  func configure(with product: Product) {
+    proguctImageView.image = UIImage(named: product.pizzaImage)
+    nameLabel.text = product.pizzaName
+    detailLabel.text = product.pizzaDetails
+    priceButton.setTitle(product.pizzaPrice, for: .normal)
+  }
 }
 
 //  MARK: - Set Views and Constraints
-private extension CustomCell {
+private extension ProductCell {
   func setupView() {
     backgroundColor = .black
     containerView.addSubviews([proguctImageView, stackView])
@@ -89,8 +99,8 @@ private extension CustomCell {
     
     NSLayoutConstraint.activate([
       proguctImageView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
-      proguctImageView.heightAnchor.constraint(equalToConstant: 60),
-      proguctImageView.widthAnchor.constraint(equalToConstant: 60),
+      proguctImageView.heightAnchor.constraint(equalToConstant: 80),
+      proguctImageView.widthAnchor.constraint(equalToConstant: 80),
       proguctImageView.centerYAnchor.constraint(equalTo: containerView.centerYAnchor),
     ])
     
